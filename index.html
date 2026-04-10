@@ -122,12 +122,10 @@
  } // end of the window.onload function
     function copy() /*function named copy*/{
                 const imgData = context.getImageData(0, 0, 600, 500); /*gathers RGBA data from uploaded image*/
-               
-
-                for (let i = 0; i < imgData.data.length; i += 4){ /*basically assigns RGBA values a number (R=i, G=i+1, B=i+2, A=i+3*/ 
-                 imgData.data[i] = 0; /*sets red equal to 0 (no red)*/
-                 imgData.data[i+1] = 0;} /*sets green equal to 0 (no green)*/
-                ctx.putImageData(imgData, 0, 0);}  /*puts this image data into canvas2*/
+                for (let i = 0; i < imgData.data.length; i += 4){ /*basically assigns RGBA values a number (R=i, G=i+1, B=i+2, A=i+3)*/ 
+                     imgData.data[i] = 0; /*sets red equal to 0 (no red)*/
+                     imgData.data[i+1] = 0;} /*sets green equal to 0 (no green)*/
+                ctx.putImageData(imgData, 0, 0);}  /*puts this image data into 2nd canvas*/
                
  </script>
  </head>
@@ -155,7 +153,7 @@
         var canvas1 = document.getElementById('myCanvas1'); /* calls for the second canvas */
         var ctx = canvas1.getContext("2d") /* lets me add stuff within second canvas */
         ctx.font = "30px Arial"; //declares font and font size
-      	 ctx.fillText("Haset", 10, 50); //adds my name
+      	 ctx.fillText("Your transformed image will appear here.", 10, 50); //Adds identifying text to 2nd canvas
 
         context.font = '20pt Calibri';
         context.fillStyle = "black";
