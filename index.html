@@ -122,12 +122,12 @@
  } // end of the window.onload function
     function copy() /*function named copy*/{
                 const imgData = context.getImageData(0, 0, 600, 500); /*gathers RGBA data from uploaded image*/
-                 /*puts this image data into canvas2*/
+               
 
-                for (let i = 0; i < imgData.data.length; i += 4){
-                 imgData.data[i] = 0;
-                 imgData.data[i+1] = 0;}
-                ctx.putImageData(imgData, 0, 0);}
+                for (let i = 0; i < imgData.data.length; i += 4){ /*basically assigns RGBA values a number (R=i, G=i+1, B=i+2, A=i+3*/ 
+                 imgData.data[i] = 0; /*sets red equal to 0 (no red)*/
+                 imgData.data[i+1] = 0;} /*sets green equal to 0 (no green)*/
+                ctx.putImageData(imgData, 0, 0);}  /*puts this image data into canvas2*/
                
  </script>
  </head>
@@ -141,7 +141,7 @@
       <div>
         Press orange button to create or choose image file:
         <input type="file" id="fileInput" STYLE="background-color: #FF6600;">
-        <button onclick="copy()">Copy</button> <!--creates button that calls Copy function-->
+        <button onclick="copy()">Transform Your Image!</button> <!--creates button that calls Copy function-->
       </div>
       <div id="messageDisplayArea"></div>
      <div style="display: flex;flex-wrap:wrap; gap:10px;"> <!-- makes it so that the canvases sit next to each other, flex-wrap:wrap makes it 
