@@ -101,7 +101,10 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-          
+           function copy() {
+                const imgData = context.getImageData(10, 10, 600, 500);
+                ctx.putImageData(imgData, 610, 500);
+}
           
           
           
@@ -133,7 +136,7 @@
         <input type="file" id="fileInput" STYLE="background-color: #FF6600;">
       </div>
       <div id="messageDisplayArea"></div>
-     <div style="display: block;flex-wrap:wrap; gap:10px;"> <!-- makes it so that the canvases sit next to each other, flex-wrap:wrap makes it 
+     <div style="display: flex;flex-wrap:wrap; gap:10px;"> <!-- makes it so that the canvases sit next to each other, flex-wrap:wrap makes it 
       so that if cant fit on screen -> go to next line; gap:10px is space between the canvas-->
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <canvas id="myCanvas1" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas><!-- creates second canvas-->
@@ -149,6 +152,8 @@
         context.font = '20pt Calibri';
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
+        <button onclick="copy()">Copy</button>
+
       </script>
 
     </div><!-- /content -->
