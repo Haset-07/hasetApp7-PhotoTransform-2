@@ -74,9 +74,9 @@
   var vertSquashRatio = detectVerticalSquash(img);
   ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);
  }
-  function copy() {
-                const imgData = context.getImageData(10, 10, 600, 500);
-                ctx.putImageData(imgData, 0, 0);}
+  function copy() /*function named copy*/{
+                const imgData = context.getImageData(10, 10, 600, 500); /*gathers RGBA data from uploaded image*/
+                ctx.putImageData(imgData, 0, 0);} /*puts this image data into canvas2*/
 
 /* window.onload necessary to keep javascripts from running before the app gets a chance to load entirely. */
  window.onload = function() {
@@ -135,7 +135,7 @@
       <div>
         Press orange button to create or choose image file:
         <input type="file" id="fileInput" STYLE="background-color: #FF6600;">
-        <button onclick="copy()">Copy</button>
+        <button onclick="copy()">Copy</button> <!--creates button that calls Copy function-->
       </div>
       <div id="messageDisplayArea"></div>
      <div style="display: flex;flex-wrap:wrap; gap:10px;"> <!-- makes it so that the canvases sit next to each other, flex-wrap:wrap makes it 
