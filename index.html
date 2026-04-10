@@ -77,6 +77,7 @@
 
 /* window.onload necessary to keep javascripts from running before the app gets a chance to load entirely. */
  window.onload = function() {
+  console.log("WINDOW LOADED");
   var fileInput = document.getElementById('fileInput');
   var messageDisplayArea = document.getElementById('messageDisplayArea');
   /* fileInput.addEventListener looks for any change in the <input> tag indicating that the user has selected a file (picture). */
